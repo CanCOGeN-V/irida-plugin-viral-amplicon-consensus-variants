@@ -1,4 +1,4 @@
-package org.publichealthbioinformatics.irida.plugin.resistancescreen;
+package org.publichealthbioinformatics.irida.plugin.viralampliconconsensusvariants;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -31,21 +31,21 @@ import ca.corefacility.bioinformatics.irida.service.workflow.IridaWorkflowsServi
  * <https://github.com/phac-nml/irida/blob/development/src/main/java/ca/corefacility/bioinformatics/irida/pipeline/results/AnalysisSampleUpdater.java>
  * or the README.md file in this project for more details.
  */
-public class ResistanceScreenPluginUpdater implements AnalysisSampleUpdater {
+public class ViralAmpliconConsensusVariantsPluginUpdater implements AnalysisSampleUpdater {
 
 	private final MetadataTemplateService metadataTemplateService;
 	private final SampleService sampleService;
 	private final IridaWorkflowsService iridaWorkflowsService;
 
 	/**
-	 * Builds a new {@link ResistanceScreenPluginUpdater} with the given services.
+	 * Builds a new {@link ViralAmpliconConsensusVariantsPluginUpdater} with the given services.
 	 * 
 	 * @param metadataTemplateService The metadata template service.
 	 * @param sampleService           The sample service.
 	 * @param iridaWorkflowsService   The irida workflows service.
 	 */
-	public ResistanceScreenPluginUpdater(MetadataTemplateService metadataTemplateService, SampleService sampleService,
-										 IridaWorkflowsService iridaWorkflowsService) {
+	public ViralAmpliconConsensusVariantsPluginUpdater(MetadataTemplateService metadataTemplateService, SampleService sampleService,
+													   IridaWorkflowsService iridaWorkflowsService) {
 		this.metadataTemplateService = metadataTemplateService;
 		this.sampleService = sampleService;
 		this.iridaWorkflowsService = iridaWorkflowsService;
@@ -91,20 +91,14 @@ public class ResistanceScreenPluginUpdater implements AnalysisSampleUpdater {
 
 			// gets information from the "gene_detection_status.tsv" output file and constructs metadata
 			// objects
-			List<Map<String, String>> geneDetectionStatuses = parseGeneDetectionStatusFile(geneDetectionStatusFilePath);
+			List<Map<String, String>> results = parseResultFile(geneDetectionStatusFilePath);
 
-			for (Map<String, String> geneDetectionStatus : geneDetectionStatuses) {
-				String geneName = geneDetectionStatus.get("gene_name");
-				String geneDetected = geneDetectionStatus.get("detected");
-				String alleles = geneDetectionStatus.get("alleles");
-				PipelineProvidedMetadataEntry geneDetectedEntry = new PipelineProvidedMetadataEntry(geneDetected, "xs:boolean", analysis);
-				PipelineProvidedMetadataEntry allelesEntry = new PipelineProvidedMetadataEntry(alleles, "xs:string", analysis);
+			for (Map<String, String> result : results) {
+				PipelineProvidedMetadataEntry resultEntry = new PipelineProvidedMetadataEntry("result", "xs:string", analysis);
 				// key will be string like 'resistance-screen/KPC/detected'
 				String key;
-				key = workflowName + "/" + geneName + "/" + "detected";
-				metadataEntries.put(key, geneDetectedEntry);
-				key = workflowName + "/" + geneName + "/" + "alleles";
-				metadataEntries.put(key, allelesEntry);
+				key = workflowName + "/result";
+				metadataEntries.put(key, resultEntry);
 			}
 
 			Map<MetadataTemplateField, MetadataEntry> metadataMap = metadataTemplateService.getMetadataMap(metadataEntries);
@@ -123,48 +117,42 @@ public class ResistanceScreenPluginUpdater implements AnalysisSampleUpdater {
 
 
 	/**
-	 * Parses out values from the hash file into a {@link List<Map>} linking 'gene_name' to 'detection_status'.
+	 * Parses out result values.
 	 * 
-	 * @param geneDetectionStatusFilePath The {@link Path} to the file containing the hash values from
-	 *                 the pipeline. This file should contain contents like:
-	 * 
-	 *                 <pre>
-	 * gene_name	detected	alleles
-	 * KPC	True	KPC-2
-	 * OXA	False
-	 *                 </pre>
+	 * @param resultFilePath The {@link Path} to the file containing results. Contents look like:
+	 *
 	 * 
 	 * @return An {@link List<Map>} linking 'geneName' to 'detectionStatus'.
 	 * @throws IOException             If there was an error reading the file.
 	 * @throws PostProcessingException If there was an error parsing the file.
 	 */
 	@VisibleForTesting
-	List<Map<String, String>> parseGeneDetectionStatusFile(Path geneDetectionStatusFilePath) throws IOException, PostProcessingException {
-		List<Map<String, String>> geneDetectionStatuses = new ArrayList<Map<String, String>>();
+	List<Map<String, String>> parseResultFile(Path resultFilePath) throws IOException, PostProcessingException {
+		List<Map<String, String>> results = new ArrayList<Map<String, String>>();
 
-		BufferedReader geneDetectionStatusReader = new BufferedReader(new FileReader(geneDetectionStatusFilePath.toFile()));
+		BufferedReader resultReader = new BufferedReader(new FileReader(resultFilePath.toFile()));
 
 		try {
-			String headerLine = geneDetectionStatusReader.readLine();
+			String headerLine = resultReader.readLine();
 
 			String[] fieldNames = headerLine.split("\t");
-			HashMap<String, String> geneDetectionStatus = new HashMap<>();
-			String geneDetectionStatusLine;
-			while (( geneDetectionStatusLine = geneDetectionStatusReader.readLine()) != null) {
-				String[] geneDetectionStatusEntries = geneDetectionStatusLine.split("\t", -1);
+			HashMap<String, String> resultTmp = new HashMap<>();
+			String resultLine;
+			while (( resultLine = resultReader.readLine()) != null) {
+				String[] result = resultLine.split("\t", -1);
 				for (int i = 0; i < fieldNames.length; i++) {
-					geneDetectionStatus.put(fieldNames[i], geneDetectionStatusEntries[i]);
+					resultTmp.put(fieldNames[i], result[i]);
 				}
-				HashMap<String, String> clonedGeneDetectionStatus = (HashMap<String, String>) geneDetectionStatus.clone();
-				geneDetectionStatuses.add(clonedGeneDetectionStatus);
+				HashMap<String, String> clonedResults = (HashMap<String, String>) resultTmp.clone();
+				results.add(clonedResults);
 			}
 
 		} finally {
 			// make sure to close, even in cases where an exception is thrown
-			geneDetectionStatusReader.close();
+			resultReader.close();
 		}
 
-		return geneDetectionStatuses;
+		return results;
 	}
 
 	/**
@@ -175,6 +163,6 @@ public class ResistanceScreenPluginUpdater implements AnalysisSampleUpdater {
 	 */
 	@Override
 	public AnalysisType getAnalysisType() {
-		return ResistanceScreenPlugin.RESISTANCE_SCREEN;
+		return ViralAmpliconConsensusVariantsPlugin.VIRAL_AMPLICON_CONSENSUS_VARIANTS;
 	}
 }

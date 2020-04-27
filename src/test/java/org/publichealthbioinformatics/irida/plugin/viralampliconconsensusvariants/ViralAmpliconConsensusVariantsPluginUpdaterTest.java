@@ -1,4 +1,4 @@
-package org.publichealthbioinformatics.irida.plugin.resistancescreen;
+package org.publichealthbioinformatics.irida.plugin.viralampliconconsensusvariants;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -114,12 +114,10 @@ public class ViralAmpliconConsensusVariantsPluginUpdaterTest {
 
     @Test
     public void testParseResultFile() throws Throwable {
-        for(String sampleId:sampleIds) {
-            Path resultFilePath = Paths.get(ClassLoader.getSystemResource("result.tsv").toURI());
-            List<Map<String, String>> results = updater.resultFile(resultFilePath);
-            for (Map<String, String> result : results) {
-                assertThat(result, IsMapContaining.hasKey("key"));
-            }
+        Path resultFilePath = Paths.get(ClassLoader.getSystemResource("result.tsv").toURI());
+        List<Map<String, String>> results = updater.parseResultFile(resultFilePath);
+        for (Map<String, String> result : results) {
+            assertThat(result, IsMapContaining.hasKey("key"));
         }
     }
 }
