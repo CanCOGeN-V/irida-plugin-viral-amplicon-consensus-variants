@@ -78,8 +78,8 @@ public class ViralAmpliconConsensusVariantsPluginUpdater implements AnalysisSamp
 		final Sample sample = samples.iterator().next();
 
 		// extracts paths to the analysis result files
-		AnalysisOutputFile geneDetectionStatusAnalysisOutputFile = analysis.getAnalysis().getAnalysisOutputFile("gene_detection_status");
-		Path geneDetectionStatusFilePath = geneDetectionStatusAnalysisOutputFile.getFile();
+		AnalysisOutputFile resultsOutputFile = analysis.getAnalysis().getAnalysisOutputFile("results");
+		Path resultsFilePath = resultsOutputFile.getFile();
 
 		try {
 			Map<String, MetadataEntry> metadataEntries = new HashMap<>();
@@ -89,9 +89,9 @@ public class ViralAmpliconConsensusVariantsPluginUpdater implements AnalysisSamp
 			String workflowVersion = iridaWorkflow.getWorkflowDescription().getVersion();
 			String workflowName = iridaWorkflow.getWorkflowDescription().getName();
 
-			// gets information from the "gene_detection_status.tsv" output file and constructs metadata
+			// gets information from the "results.tsv" output file and constructs metadata
 			// objects
-			List<Map<String, String>> results = parseResultFile(geneDetectionStatusFilePath);
+			List<Map<String, String>> results = parseResultFile(resultsFilePath);
 
 			for (Map<String, String> result : results) {
 				PipelineProvidedMetadataEntry resultEntry = new PipelineProvidedMetadataEntry("result", "xs:string", analysis);
