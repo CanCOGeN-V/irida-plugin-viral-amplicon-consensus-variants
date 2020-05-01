@@ -32,13 +32,12 @@ strategy such as [Primal Scheme](http://primal.zibraproject.org/).
 In order to use this pipeline, you will also have to install the following Galaxy tools and data 
 managers within your Galaxy instance. These can be found at:
 
-| Name                               | Version         | Owner                          | Metadata Revision | Galaxy Toolshed Link                                                                                                                              |
-|------------------------------------|-----------------|------------------------------- |-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| shovill                            | `1.0.4`         | `iuc`                          | 3 (2018-11-13)    | [shovill-3:865119fcb694](https://toolshed.g2.bx.psu.edu/view/iuc/shovill/865119fcb694)                                                            |
-| quast                              | `5.0.2`         | `iuc`                          | 5 (2018-12-04)    | [quast-5:81df4950d65b](https://toolshed.g2.bx.psu.edu/view/iuc/quast/81df4950d65b)                                                                |
-| abricate                           | `0.9.8`         | `iuc`                          | 7 (2019-10-29)    | [abricate-7:4efdca267d51](https://toolshed.g2.bx.psu.edu/view/iuc/abricate/4efdca267d51)                                                          |
-| screen_abricate_report             | `0.4.0`         | `public-health-bioinformatics` | 4 (2020-01-02)    | [screen_abricate_report-4:22247b1a59d5](https://toolshed.g2.bx.psu.edu/view/public-health-bioinformatics/screen_abricate_report/22247b1a59d5)     |
-| data_manager_manual                | `0.0.2`         | `iuc`                          | 5 (2019-10-21)    | [data_manager_manual-5:744f607fac50](https://toolshed.g2.bx.psu.edu/view/iuc/data_manager_manual/744f607fac50)                                    |
+| Name                               | Version         | Owner                          | Metadata Revision | Galaxy Toolshed Link                                                                                                      |
+|------------------------------------|-----------------|------------------------------- |-------------------|---------------------------------------------------------------------------------------------------------------------------|
+| trim_galore                        | `0.6.3`         | `bgruening`                    | 15 (2019-07-30)   | [trim_galore-15:084bbd8ba7b8](https://toolshed.g2.bx.psu.edu/view/iuc/trim_galore/084bbd8ba7b8)                           |
+| bwa                                | `0.7.17`        | `devteam`                      | 22 (2019-05-08)   | [bwa-22:01ac0a5fedc3](https://toolshed.g2.bx.psu.edu/view/iuc/bwa/01ac0a5fedc3)                                           |
+| suite_ivar                         | `0.9.8`         | `iuc`                          | 7 (2019-10-29)    | [suite_ivar:4b5c86ac057f](https://toolshed.g2.bx.psu.edu/view/iuc/suite_ivar/4b5c86ac057f)                                |
+| quast                              | `5.0.2`         | `iuc`                          | 5 (2018-12-04)    | [quast-5:81df4950d65b](https://toolshed.g2.bx.psu.edu/view/iuc/quast/81df4950d65b)                                        |
 
 ## Installing to IRIDA
 

@@ -70,7 +70,7 @@ public class ViralAmpliconConsensusVariantsPlugin extends Plugin {
 		 * <strong>id</strong> entry in the <strong>irida_workflow.xml</strong> file.
 		 * 
 		 * <pre>
-		 * {@code <id>1f40bbf2-4080-4cf7-a846-988e602eaa30</id>}
+		 * {@code <id>5c632afa-0e8d-4549-ac0f-5a38027b9ea6</id>}
 		 * </pre>
 		 * 
 		 * @return A {@link UUID} defining the id of this pipeline.

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <iridaWorkflow>
-  <id>cb8e58ec-51d2-4ac4-961c-160ad250e3f0</id>
+  <id>5c632afa-0e8d-4549-ac0f-5a38027b9ea6</id>
   <name>viral-amplicon-consensus-variants</name>
   <version>0.1.0</version>
   <analysisType>VIRAL_AMPLICON_CONSENSUS_VARIANTS</analysisType>
@@ -10,27 +10,6 @@
     <requiresSingleSample>true</requiresSingleSample>
   </inputs>
   <parameters>
-    <parameter name="trim_galore-2-params.settingsType" defaultValue="default">
-      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/bgruening/trim_galore/trim_galore/0.6.3" parameterName="params.settingsType" label="Trim Galore! advanced settings" type="select"/>
-    </parameter>
-    <parameter name="trim_galore-2-rrbs.settingsType" defaultValue="default">
-      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/bgruening/trim_galore/trim_galore/0.6.3" parameterName="rrbs.settingsType" label="RRBS specific settings" type="select"/>
-    </parameter>
-    <parameter name="trim_galore-2-singlePaired.sPaired" defaultValue="paired_collection">
-      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/bgruening/trim_galore/trim_galore/0.6.3" parameterName="singlePaired.sPaired" label="Is this library paired- or single-end?" type="select"/>
-    </parameter>
-    <parameter name="trim_galore-2-singlePaired.three_prime_clip_R1" defaultValue="">
-      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/bgruening/trim_galore/trim_galore/0.6.3" parameterName="singlePaired.three_prime_clip_R1" label="Remove N bp from the 3' end" type="integer"/>
-    </parameter>
-    <parameter name="trim_galore-2-singlePaired.three_prime_clip_R2" defaultValue="">
-      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/bgruening/trim_galore/trim_galore/0.6.3" parameterName="singlePaired.three_prime_clip_R2"/>
-    </parameter>
-    <parameter name="trim_galore-2-singlePaired.trim1" defaultValue="false">
-      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/bgruening/trim_galore/trim_galore/0.6.3" parameterName="singlePaired.trim1"/>
-    </parameter>
-    <parameter name="trim_galore-2-singlePaired.trimming.trimming_select" defaultValue="">
-      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/bgruening/trim_galore/trim_galore/0.6.3" parameterName="singlePaired.trimming.trimming_select"/>
-    </parameter>
     <parameter name="bwa-3-rg.rg_selector" defaultValue="do_not_set">
       <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.7.17.1" parameterName="rg.rg_selector"/>
     </parameter>
@@ -112,7 +91,6 @@
     <output name="consensus_fasta" fileName="consensus.fasta"/>
     <output name="variants" fileName="variants.tsv"/>
     <output name="quast_report" fileName="quast_report.tsv"/>
-    <output name="results" fileName="results.tsv"/>
   </outputs>
   <toolRepositories>
     <repository>

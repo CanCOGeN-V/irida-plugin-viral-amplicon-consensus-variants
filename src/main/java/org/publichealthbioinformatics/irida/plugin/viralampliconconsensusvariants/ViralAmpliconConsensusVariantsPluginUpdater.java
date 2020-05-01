@@ -78,7 +78,7 @@ public class ViralAmpliconConsensusVariantsPluginUpdater implements AnalysisSamp
 		final Sample sample = samples.iterator().next();
 
 		// extracts paths to the analysis result files
-		AnalysisOutputFile resultsOutputFile = analysis.getAnalysis().getAnalysisOutputFile("results");
+		AnalysisOutputFile resultsOutputFile = analysis.getAnalysis().getAnalysisOutputFile("quast_report");
 		Path resultsFilePath = resultsOutputFile.getFile();
 
 		try {

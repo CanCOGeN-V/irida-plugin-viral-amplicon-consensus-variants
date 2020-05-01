@@ -64,12 +64,12 @@ public class ViralAmpliconConsensusVariantsPluginUpdaterTest {
     @Test
     public void testUpdate() throws Throwable {
         ImmutableMap<String, String> expectedResults = ImmutableMap.<String, String>builder()
-                .put("key", "value")
+                .put("viral-amplicon-consensus-variants/result", "result")
                 .build();
-        Path resultFilePath = Paths.get(ClassLoader.getSystemResource("result.tsv").toURI());
+        Path resultFilePath = Paths.get(ClassLoader.getSystemResource("quast_report.tsv").toURI());
 
         AnalysisOutputFile resultFile = new AnalysisOutputFile(resultFilePath, null, null, null);
-        Analysis analysis = new Analysis(null, ImmutableMap.of("result", resultFile), null, null);
+        Analysis analysis = new Analysis(null, ImmutableMap.of("quast_report", resultFile), null, null);
         AnalysisSubmission submission = AnalysisSubmission.builder(uuid)
                 .inputFiles(ImmutableSet.of(new SingleEndSequenceFile(null))).build();
 
@@ -106,15 +106,14 @@ public class ViralAmpliconConsensusVariantsPluginUpdaterTest {
 
         // this bit just ensures the merged data got saved
         verify(sampleService).updateFields(eq(sample.getId()), mapCaptor.capture());
-        Map<MetadataTemplateField, MetadataEntry> value = (Map<MetadataTemplateField, MetadataEntry>) mapCaptor
-                .getValue().get("metadata");
+        Map<MetadataTemplateField, MetadataEntry> value = (Map<MetadataTemplateField, MetadataEntry>) mapCaptor.getValue().get("metadata");
 
         assertEquals(metadataMap.keySet().iterator().next(), value.keySet().iterator().next());
     }
 
     @Test
     public void testParseResultFile() throws Throwable {
-        Path resultFilePath = Paths.get(ClassLoader.getSystemResource("result.tsv").toURI());
+        Path resultFilePath = Paths.get(ClassLoader.getSystemResource("quast_report.tsv").toURI());
         List<Map<String, String>> results = updater.parseResultFile(resultFilePath);
         for (Map<String, String> result : results) {
             assertThat(result, IsMapContaining.hasKey("key"));
