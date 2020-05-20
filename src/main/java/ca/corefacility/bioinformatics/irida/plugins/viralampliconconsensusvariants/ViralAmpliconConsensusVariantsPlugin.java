@@ -1,4 +1,4 @@
-package org.publichealthbioinformatics.irida.plugin.viralampliconconsensusvariants;
+package ca.corefacility.bioinformatics.irida.plugins.viralampliconconsensusvariants;
 
 import java.awt.Color;
 import java.util.Optional;

@@ -4,15 +4,15 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.publichealthbioinformatics</groupId>
+	<groupId>ca.corefacility.bioinformatics.irida.plugins</groupId>
 	<artifactId>irida-plugin-viral-amplicon-consensus-variants</artifactId>
 	<version>0.1.0-SNAPSHOT</version>
 
 	<!-- Please fill out these properties with information about your particular plugin -->
 	<properties>
 		<!-- Information used to define properties about a plugin. Please see the PF4J docs for more details https://pf4j.org/doc/getting-started.html -->
-		<plugin.id>resistance-screen</plugin.id>
-		<plugin.class>org.publichealthbioinformatics.irida.plugin.viralampliconconsensusvariants.ViralAmpliconConsensusVariantsPlugin</plugin.class>
+		<plugin.id>viral-amplicon-consensus-variants</plugin.id>
+		<plugin.class>ca.corefacility.bioinformatics.irida.plugins.viralampliconconsensusvariants.ViralAmpliconConsensusVariantsPlugin</plugin.class>
 		<plugin.version>0.1.0-SNAPSHOT</plugin.version>
 		<plugin.provider>Dan Fornika</plugin.provider>
 		<plugin.dependencies></plugin.dependencies>

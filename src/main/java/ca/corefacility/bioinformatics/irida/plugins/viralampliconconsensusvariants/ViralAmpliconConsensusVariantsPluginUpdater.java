@@ -1,4 +1,4 @@
-package org.publichealthbioinformatics.irida.plugin.viralampliconconsensusvariants;
+package ca.corefacility.bioinformatics.irida.plugins.viralampliconconsensusvariants;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

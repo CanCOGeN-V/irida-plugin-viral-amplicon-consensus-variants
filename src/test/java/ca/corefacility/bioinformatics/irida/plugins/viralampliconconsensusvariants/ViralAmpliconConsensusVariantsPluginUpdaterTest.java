@@ -1,4 +1,4 @@
-package org.publichealthbioinformatics.irida.plugin.viralampliconconsensusvariants;
+package ca.corefacility.bioinformatics.irida.plugins.viralampliconconsensusvariants;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
