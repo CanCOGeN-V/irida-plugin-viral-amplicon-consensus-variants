@@ -10,7 +10,12 @@
     <requiresSingleSample>true</requiresSingleSample>
   </inputs>
   <parameters>
-
+    <parameter name="ivar_trim-4-primer_scheme_bedfile" required="true">
+      <dynamicSource>
+        <galaxyToolDataTable name="primer_scheme_bedfiles" displayColumn="name" parameterColumn="value" />
+      </dynamicSource>
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/ivar_trim/ivar_trim/1.2.1+galaxy0" parameterName="primer.cached_bed"/>
+    </parameter>
     <parameter name="ivar_trim-4-min_len" defaultValue="30">
       <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/ivar_trim/ivar_trim/1.2.1+galaxy0" parameterName="min_len" label="Minimum length of read to retain after trimming" type="integer"/>
     </parameter>
@@ -22,9 +27,6 @@
     </parameter>
     <parameter name="ivar_trim-4-min_qual" defaultValue="20">
       <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/ivar_trim/ivar_trim/1.2.1+galaxy0" parameterName="min_qual" label="Minimum quality threshold for sliding window to pass" type="integer"/>
-    </parameter>
-    <parameter name="ivar_trim-4-primer.cached_bed" defaultValue="nCoV-2019-V1">
-      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/ivar_trim/ivar_trim/1.2.1+galaxy0" parameterName="primer.cached_bed" label="Primer scheme name" type="select"/>
     </parameter>
     <parameter name="ivar_trim-4-primer.source" defaultValue="cached">
       <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/ivar_trim/ivar_trim/1.2.1+galaxy0" parameterName="primer.source" label="Source of primer information" type="select"/>
