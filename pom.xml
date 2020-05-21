@@ -14,7 +14,7 @@
 		<plugin.id>viral-amplicon-consensus-variants</plugin.id>
 		<plugin.class>ca.corefacility.bioinformatics.irida.plugins.viralampliconconsensusvariants.ViralAmpliconConsensusVariantsPlugin</plugin.class>
 		<plugin.version>0.1.0-SNAPSHOT</plugin.version>
-		<plugin.provider>Dan Fornika</plugin.provider>
+		<plugin.provider>CanCOGeN</plugin.provider>
 		<plugin.dependencies></plugin.dependencies>
 		<plugin.requires.runtime>1.0.0</plugin.requires.runtime>
 
