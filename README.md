@@ -32,17 +32,17 @@ strategy such as [Primal Scheme](http://primal.zibraproject.org/).
 In order to use this pipeline, you will also have to install the following Galaxy tools and data 
 managers within your Galaxy instance. These can be found at:
 
-| Name                               | Version         | Owner                          | Metadata Revision | Galaxy Toolshed Link                                                                                                      |
-|------------------------------------|-----------------|------------------------------- |-------------------|---------------------------------------------------------------------------------------------------------------------------|
-| trim_galore                        | `0.6.3`         | `bgruening`                    | 15 (2019-07-30)   | [trim_galore-15:084bbd8ba7b8](https://toolshed.g2.bx.psu.edu/view/iuc/trim_galore/084bbd8ba7b8)                           |
-| bwa                                | `0.7.17`        | `devteam`                      | 22 (2019-05-08)   | [bwa-22:01ac0a5fedc3](https://toolshed.g2.bx.psu.edu/view/iuc/bwa/01ac0a5fedc3)                                           |
-| samtools_view                      | `1.9`           | `iuc`                          |  7 (2020-01-21)   | [samtools_view-7:b01db2684fa5](https://toolshed.g2.bx.psu.edu/view/iuc/samtools_view/b01db2684fa5)                                           |
-| suite_ivar                         | `0.9.8`         | `iuc`                          |  7 (2019-10-29)   | [suite_ivar:4b5c86ac057f](https://toolshed.g2.bx.psu.edu/view/iuc/suite_ivar/4b5c86ac057f)                                |
-| quast                              | `5.0.2`         | `iuc`                          |  5 (2018-12-04)   | [quast-5:81df4950d65b](https://toolshed.g2.bx.psu.edu/view/iuc/quast/81df4950d65b)                                        |
+| Name                               | Tool Dependency Version | Owner                          | Metadata Revision | Galaxy Toolshed Link                                                                                                      |
+|------------------------------------|-------------------------|------------------------------- |-------------------|---------------------------------------------------------------------------------------------------------------------------|
+| trim_galore                        | `0.6.3`                 | `bgruening`                    | 15 (2019-07-30)   | [trim_galore-15:084bbd8ba7b8](https://toolshed.g2.bx.psu.edu/view/iuc/trim_galore/084bbd8ba7b8)                           |
+| bwa                                | `0.7.17`                | `devteam`                      | 23 (2020-05-19)   | [bwa-23:3fe632431b68](https://toolshed.g2.bx.psu.edu/view/iuc/bwa/3fe632431b68)                                           |
+| samtools_view                      | `1.9`                   | `iuc`                          |  7 (2020-01-21)   | [samtools_view-7:b01db2684fa5](https://toolshed.g2.bx.psu.edu/view/iuc/samtools_view/b01db2684fa5)                                           |
+| suite_ivar                         | `1.2.1`                 | `iuc`                          |  2 (2020-04-22)   | [suite_ivar-2:4b5c86ac057f](https://toolshed.g2.bx.psu.edu/view/iuc/suite_ivar/4b5c86ac057f)                                |
+| quast                              | `5.0.2`                 | `iuc`                          |  5 (2018-12-04)   | [quast-5:81df4950d65b](https://toolshed.g2.bx.psu.edu/view/iuc/quast/81df4950d65b)                                        |
 
 ## Installing to IRIDA
 
-Please download the provided `irida-plugin-resistance-screen-[version].jar` from the [releases][] page and copy to your 
+Please download the provided `irida-plugin-viral-amplicon-consensus-variants-[version].jar` from the [releases][] page and copy to your 
 `/etc/irida/plugins` directory.  Now you may start IRIDA and you should see the pipeline appear in your list of pipelines.
 
 *Note:* This plugin requires you to be running IRIDA version >= `19.01`. Please see the [IRIDA][] documentation for more details.
