@@ -3,7 +3,7 @@
     "tags": [],
     "format-version": "0.1",
     "name": "viral-amplicon-consensus-and-variants",
-    "version": 2,
+    "version": 0,
     "steps": {
         "0": {
             "tool_id": null,
@@ -108,13 +108,13 @@
             ],
             "workflow_outputs": [
                 {
-                    "output_name": "trimmed_reads_pair2",
-                    "uuid": "f2d0d146-3c40-4a6e-b1a9-e3a0629de6d3",
+                    "output_name": "report_file",
+                    "uuid": "74137213-adb2-499a-b293-aa83d6ba03dc",
                     "label": null
                 },
                 {
-                    "output_name": "report_file",
-                    "uuid": "74137213-adb2-499a-b293-aa83d6ba03dc",
+                    "output_name": "trimmed_reads_pair2",
+                    "uuid": "f2d0d146-3c40-4a6e-b1a9-e3a0629de6d3",
                     "label": null
                 },
                 {
@@ -128,13 +128,13 @@
                     "label": null
                 },
                 {
-                    "output_name": "trimmed_reads_single",
-                    "uuid": "4bccacca-cbc0-4363-8f7d-8b588aa37b60",
+                    "output_name": "unpaired_reads_2",
+                    "uuid": "9b3df4ee-e3cc-45c7-9612-37d3334ae094",
                     "label": null
                 },
                 {
-                    "output_name": "unpaired_reads_2",
-                    "uuid": "9b3df4ee-e3cc-45c7-9612-37d3334ae094",
+                    "output_name": "trimmed_reads_single",
+                    "uuid": "4bccacca-cbc0-4363-8f7d-8b588aa37b60",
                     "label": null
                 },
                 {
@@ -201,7 +201,7 @@
             "id": 3,
             "tool_shed_repository": {
                 "owner": "devteam",
-                "changeset_revision": "01ac0a5fedc3",
+                "changeset_revision": "3fe632431b68",
                 "name": "bwa",
                 "tool_shed": "toolshed.g2.bx.psu.edu"
             },
@@ -514,13 +514,18 @@
             "errors": null,
             "name": "Quast",
             "post_job_actions": {
-                "HideDatasetActionreport_pdf": {
-                    "output_name": "report_pdf",
+                "HideDatasetActionreport_html": {
+                    "output_name": "report_html",
                     "action_type": "HideDatasetAction",
                     "action_arguments": {}
                 },
                 "HideDatasetActionkmers": {
                     "output_name": "kmers",
+                    "action_type": "HideDatasetAction",
+                    "action_arguments": {}
+                },
+                "HideDatasetActionreport_pdf": {
+                    "output_name": "report_pdf",
                     "action_type": "HideDatasetAction",
                     "action_arguments": {}
                 },
@@ -543,11 +548,6 @@
                 },
                 "HideDatasetActionlog": {
                     "output_name": "log",
-                    "action_type": "HideDatasetAction",
-                    "action_arguments": {}
-                },
-                "HideDatasetActionreport_html": {
-                    "output_name": "report_html",
                     "action_type": "HideDatasetAction",
                     "action_arguments": {}
                 }
