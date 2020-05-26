@@ -49,7 +49,17 @@ Please download the provided `irida-plugin-viral-amplicon-consensus-variants-[ve
 
 ## Setting up your primer scheme file(s)
 
-TBD
+Primer schemes must be supplied to this pipeline via a [Galaxy Tool Data Table](https://galaxyproject.org/admin/tools/data-tables/) called `primer_scheme_bedfiles`.
+
+ARTIC primer scheme bedfiles are available from the [artic-ncov2019 GitHub repo](https://github.com/artic-network/artic-ncov2019).
+
+A Galaxy administrator will need to save the primer scheme bedfile(s) to an appropriate place in the Galaxy server that runs this pipeline, such as `tool-data/primer_scheme_bedfiles`.
+
+Once the files are saved, make an entry in the `primer_scheme_bedfiles.loc` file that is installed with the `ivar_trim` tool. That file is located at `tool-data/toolshed.g2.bx.psu.edu/repos/iuc/ivar_trim/cb903c9dc33d/primer_scheme_bedfiles.loc`. Each entry in the `primer_scheme_bedfiles.loc` file should include three tab-delimited fields:
+
+1. Value: A unique value, similar to a database primary key. Consider using a UUID.
+2. Description: A human-readable label that is exposed to Galaxy and IRIDA end-users. eg: "ARTIC nCoV-2019 primers V3"
+3. Path: The path to the primer scheme bedfile.
 
 # Usage
 
