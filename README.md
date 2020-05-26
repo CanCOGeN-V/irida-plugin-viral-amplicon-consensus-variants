@@ -38,7 +38,7 @@ managers within your Galaxy instance. These can be found at:
 | bwa                                | `0.7.17`                | `devteam`                      | 23 (2020-05-19)   | [bwa-23:3fe632431b68](https://toolshed.g2.bx.psu.edu/view/iuc/bwa/3fe632431b68)                                           |
 | samtools_view                      | `1.9`                   | `iuc`                          |  7 (2020-01-21)   | [samtools_view-7:b01db2684fa5](https://toolshed.g2.bx.psu.edu/view/iuc/samtools_view/b01db2684fa5)                                           |
 | suite_ivar                         | `1.2.1`                 | `iuc`                          |  2 (2020-04-22)   | [suite_ivar-2:4b5c86ac057f](https://toolshed.g2.bx.psu.edu/view/iuc/suite_ivar/4b5c86ac057f)                                |
-| quast                              | `5.0.2`                 | `iuc`                          |  5 (2018-12-04)   | [quast-5:81df4950d65b](https://toolshed.g2.bx.psu.edu/view/iuc/quast/81df4950d65b)                                        |
+| quast                              | `5.0.2`                 | `iuc`                          |  7 (2019-07-24)   | [quast-7:59db8ea8c845](https://toolshed.g2.bx.psu.edu/view/iuc/quast/59db8ea8c845)                                        |
 
 ## Installing to IRIDA
 
