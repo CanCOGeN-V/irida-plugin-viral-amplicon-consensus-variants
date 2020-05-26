@@ -61,6 +61,15 @@ Once the files are saved, make an entry in the `primer_scheme_bedfiles.loc` file
 2. Description: A human-readable label that is exposed to Galaxy and IRIDA end-users. eg: "ARTIC nCoV-2019 primers V3"
 3. Path: The path to the primer scheme bedfile.
 
+After editing the `primer_scheme_bedfiles.loc` file, confirm that the entries have been loaded using the Galaxy web interface.
+As an administrator, navigate to the 'Local Data' section of the Admin panel. Find 'primer_scheme_bedfiles' in the list of Tool Data Tables, and click on it.
+The entries should be displayed in a table:
+
+![primer-scheme-bedfiles-tool-data-table-galaxy-ui.png]
+
+If no entries are shown, a restart of the galaxy server process may be necessary. If the entries are still not shown,
+confirm that all lines in the `primer_scheme_bedfiles.loc` file are tab-delimited.
+
 # Usage
 
 The plugin should now show up in the **Analyses > Pipelines** section of IRIDA.
@@ -162,3 +171,4 @@ The following dependencies are required in order to make use of this plugin.
 [pipeline-parameters.png]: doc/images/pipeline-parameters.png
 [example-plugin-save-results.png]: doc/images/example-plugin-save-results.png
 [galaxy-workflow-diagram.png]: doc/images/galaxy-workflow-diagram.png
+[primer-scheme-bedfiles-tool-data-table-galaxy-ui.png]: doc/images/primer-scheme-bedfiles-tool-data-table-galaxy-ui.png
