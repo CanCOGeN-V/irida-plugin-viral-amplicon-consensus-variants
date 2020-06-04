@@ -52,24 +52,6 @@
     <parameter name="ivar_variants-6-min_qual" defaultValue="20">
       <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/ivar_variants/ivar_variants/1.2.1+galaxy0" parameterName="min_qual" label="Minimum quality score threshold to count base" type="integer"/>
     </parameter>
-    <parameter name="quast-7-min_contig" defaultValue="500">
-      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/quast/quast/5.0.2" parameterName="min_contig"/>
-    </parameter>
-    <parameter name="quast-7-threshold_contig" defaultValue="0,1000">
-      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/quast/quast/5.0.2" parameterName="threshold_contig"/>
-    </parameter>
-    <parameter name="quast-7-type_file" defaultValue="contig">
-      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/quast/quast/5.0.2" parameterName="type_file"/>
-    </parameter>
-    <parameter name="quast-7-gene_selection" defaultValue="prokaryotes">
-      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/quast/quast/5.0.2" parameterName="gene_selection"/>
-    </parameter>
-    <parameter name="quast-7-input_size" defaultValue="">
-      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/quast/quast/5.0.2" parameterName="input_size"/>
-    </parameter>
-    <parameter name="quast-7-large" defaultValue="false">
-      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/quast/quast/5.0.2" parameterName="large"/>
-    </parameter>
   </parameters>
   <outputs>
     <output name="trimmed_alignment" fileName="trimmed.bam"/>

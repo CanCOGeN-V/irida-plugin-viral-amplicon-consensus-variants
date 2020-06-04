@@ -75,6 +75,20 @@ confirm that all lines in the `primer_scheme_bedfiles.loc` file are tab-delimite
 The plugin should now show up in the **Analyses > Pipelines** section of IRIDA.
 
 ![plugin-pipeline.png][]
+
+## Parameters
+
+**Note:** As this pipeline is under active development, the list of exposed parameters and the default values of these parameters are subject to change.
+
+| Tool             | Parameter  | Description                                                                                | Default Value |
+|------------------|------------|--------------------------------------------------------------------------------------------|---------------|
+| ivar_consensus   | min_depth  | Minimum required depth to call a consensus base                                            |  10           |
+| ivar_consensus   | min_freq   | Minimum frequency that a base must match to be called as the consensus base at a position. |  0.0          |
+| ivar_consensus   | min_qual   | Minimum quality score threshold to count base                                              |  20           |
+| ivar_variants    | min_freq   | Minimum frequency threshold                                                                |  0.03         |
+| ivar_variants    | min_qual   | Minimum quality score threshold to count base                                              |  20           |
+
+
 ![pipeline-parameters.png][]
 
 ## Analysis Results
