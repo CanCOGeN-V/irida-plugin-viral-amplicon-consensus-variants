@@ -1,5 +1,5 @@
 {
-    "uuid": "3bee7d54-28e6-428b-b41a-3153c63ca6ae",
+    "uuid": "8b1fffb0-278f-4477-a3e0-31f7ba0f0758",
     "tags": [],
     "format-version": "0.1",
     "name": "viral-amplicon-consensus-and-variants",
@@ -30,8 +30,8 @@
                 }
             ],
             "position": {
-                "top": 294.390625,
-                "left": 206.4375
+                "top": 294.3833312988281,
+                "left": 206.433349609375
             },
             "annotation": "",
             "content_id": null,
@@ -62,8 +62,8 @@
                 }
             ],
             "position": {
-                "top": 881.6875,
-                "left": 255.296875
+                "top": 881.683349609375,
+                "left": 255.29998779296875
             },
             "annotation": "",
             "content_id": null,
@@ -113,31 +113,6 @@
                     "label": null
                 },
                 {
-                    "output_name": "trimmed_reads_pair2",
-                    "uuid": "f2d0d146-3c40-4a6e-b1a9-e3a0629de6d3",
-                    "label": null
-                },
-                {
-                    "output_name": "trimmed_reads_pair1",
-                    "uuid": "f0431b84-726f-4247-8692-0e17d853fd28",
-                    "label": null
-                },
-                {
-                    "output_name": "unpaired_reads_1",
-                    "uuid": "d9256773-ffce-4942-a4e5-0f56aea87124",
-                    "label": null
-                },
-                {
-                    "output_name": "unpaired_reads_2",
-                    "uuid": "9b3df4ee-e3cc-45c7-9612-37d3334ae094",
-                    "label": null
-                },
-                {
-                    "output_name": "trimmed_reads_single",
-                    "uuid": "4bccacca-cbc0-4363-8f7d-8b588aa37b60",
-                    "label": null
-                },
-                {
                     "output_name": "trimmed_reads_unpaired_collection",
                     "uuid": "23166028-c3ac-41ed-ac50-76888586c72a",
                     "label": null
@@ -149,7 +124,7 @@
                     "id": 0
                 }
             },
-            "tool_state": "{\"__page__\": null, \"__rerun_remap_job_id__\": null, \"params\": \"{\\\"__current_case__\\\": 0, \\\"settingsType\\\": \\\"default\\\"}\", \"rrbs\": \"{\\\"__current_case__\\\": 0, \\\"settingsType\\\": \\\"default\\\"}\", \"singlePaired\": \"{\\\"__current_case__\\\": 2, \\\"input_mate_pairs\\\": {\\\"__class__\\\": \\\"ConnectedValue\\\"}, \\\"sPaired\\\": \\\"paired_collection\\\", \\\"three_prime_clip_R1\\\": \\\"\\\", \\\"three_prime_clip_R2\\\": \\\"\\\", \\\"trim1\\\": \\\"false\\\", \\\"trimming\\\": {\\\"__current_case__\\\": 0, \\\"trimming_select\\\": \\\"\\\"}}\"}",
+            "tool_state": "{\"__page__\": null, \"__rerun_remap_job_id__\": null, \"params\": \"{\\\"__current_case__\\\": 1, \\\"clip_R1\\\": \\\"\\\", \\\"clip_R2\\\": \\\"\\\", \\\"error_rate\\\": \\\"0.1\\\", \\\"min_length\\\": \\\"30\\\", \\\"quality\\\": \\\"20\\\", \\\"report\\\": \\\"true\\\", \\\"retain_unpaired\\\": {\\\"__current_case__\\\": 0, \\\"retain_unpaired_select\\\": \\\"no_output\\\"}, \\\"settingsType\\\": \\\"custom\\\", \\\"stringency\\\": \\\"1\\\"}\", \"rrbs\": \"{\\\"__current_case__\\\": 0, \\\"settingsType\\\": \\\"default\\\"}\", \"singlePaired\": \"{\\\"__current_case__\\\": 2, \\\"input_mate_pairs\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"sPaired\\\": \\\"paired_collection\\\", \\\"three_prime_clip_R1\\\": \\\"\\\", \\\"three_prime_clip_R2\\\": \\\"\\\", \\\"trim1\\\": \\\"false\\\", \\\"trimming\\\": {\\\"__current_case__\\\": 0, \\\"trimming_select\\\": \\\"\\\"}}\"}",
             "id": 2,
             "tool_shed_repository": {
                 "owner": "bgruening",
@@ -165,13 +140,50 @@
                     "output_name": "trimmed_reads_paired_collection",
                     "action_type": "HideDatasetAction",
                     "action_arguments": {}
+                },
+                "HideDatasetActiontrimmed_reads_pair2": {
+                    "output_name": "trimmed_reads_pair2",
+                    "action_type": "HideDatasetAction",
+                    "action_arguments": {}
+                },
+                "HideDatasetActiontrimmed_reads_pair1": {
+                    "output_name": "trimmed_reads_pair1",
+                    "action_type": "HideDatasetAction",
+                    "action_arguments": {}
+                },
+                "HideDatasetActiontrimmed_reads_single": {
+                    "output_name": "trimmed_reads_single",
+                    "action_type": "HideDatasetAction",
+                    "action_arguments": {}
+                },
+                "HideDatasetActionunpaired_reads_2": {
+                    "output_name": "unpaired_reads_2",
+                    "action_type": "HideDatasetAction",
+                    "action_arguments": {}
+                },
+                "HideDatasetActionunpaired_reads_1": {
+                    "output_name": "unpaired_reads_1",
+                    "action_type": "HideDatasetAction",
+                    "action_arguments": {}
+                },
+                "RenameDatasetActionreport_file": {
+                    "output_name": "report_file",
+                    "action_type": "RenameDatasetAction",
+                    "action_arguments": {
+                        "newname": "trimming_report.txt"
+                    }
                 }
             },
             "label": null,
-            "inputs": [],
+            "inputs": [
+                {
+                    "name": "singlePaired",
+                    "description": "runtime parameter for tool Trim Galore!"
+                }
+            ],
             "position": {
-                "top": 393.09375,
-                "left": 187.09375
+                "top": 393.1000061035156,
+                "left": 187.10000610351562
             },
             "annotation": "",
             "content_id": "toolshed.g2.bx.psu.edu/repos/bgruening/trim_galore/trim_galore/0.6.3",
@@ -219,7 +231,7 @@
             "inputs": [],
             "position": {
                 "top": 200,
-                "left": 565.140625
+                "left": 565.13330078125
             },
             "annotation": "",
             "content_id": "toolshed.g2.bx.psu.edu/repos/devteam/bwa/bwa_mem/0.7.17.1",
@@ -281,7 +293,7 @@
             "inputs": [],
             "position": {
                 "top": 412.75,
-                "left": 551.59375
+                "left": 551.5999755859375
             },
             "annotation": "",
             "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/samtools_view/samtools_view/1.9+galaxy1",
@@ -309,7 +321,7 @@
                     "id": 4
                 }
             },
-            "tool_state": "{\"__page__\": null, \"min_len\": \"\\\"30\\\"\", \"inc_primers\": \"\\\"false\\\"\", \"window_width\": \"\\\"4\\\"\", \"min_qual\": \"\\\"20\\\"\", \"primer\": \"{\\\"__current_case__\\\": 1, \\\"cached_bed\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"source\\\": \\\"cached\\\"}\", \"input_bam\": \"{\\\"__class__\\\": \\\"ConnectedValue\\\"}\", \"__rerun_remap_job_id__\": null}",
+            "tool_state": "{\"__page__\": null, \"min_len\": \"\\\"30\\\"\", \"inc_primers\": \"\\\"false\\\"\", \"window_width\": \"\\\"4\\\"\", \"min_qual\": \"\\\"20\\\"\", \"primer\": \"{\\\"__current_case__\\\": 1, \\\"cached_bed\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"source\\\": \\\"cached\\\"}\", \"input_bam\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"__rerun_remap_job_id__\": null}",
             "id": 5,
             "tool_shed_repository": {
                 "owner": "iuc",
@@ -334,10 +346,14 @@
                 {
                     "name": "primer",
                     "description": "runtime parameter for tool ivar trim"
+                },
+                {
+                    "name": "input_bam",
+                    "description": "runtime parameter for tool ivar trim"
                 }
             ],
             "position": {
-                "top": 659.890625,
+                "top": 659.8833312988281,
                 "left": 546.5
             },
             "annotation": "",
@@ -393,8 +409,8 @@
             "label": null,
             "inputs": [],
             "position": {
-                "top": 793.1875,
-                "left": 552.890625
+                "top": 793.183349609375,
+                "left": 552.88330078125
             },
             "annotation": "",
             "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/ivar_variants/ivar_variants/1.2.1+galaxy0",
@@ -502,7 +518,7 @@
                     "id": 1
                 }
             },
-            "tool_state": "{\"scaffold_gap_max_size\": \"\\\"1000\\\"\", \"skip_unaligned_mis_contigs\": \"\\\"true\\\"\", \"assembly\": \"{\\\"__current_case__\\\": 0, \\\"orga_type\\\": \\\"\\\", \\\"ref\\\": {\\\"__current_case__\\\": 0, \\\"features\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"operons\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"r\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"use_ref\\\": \\\"true\\\"}, \\\"type\\\": \\\"genome\\\"}\", \"circos\": \"\\\"false\\\"\", \"contig_thresholds\": \"\\\"0,1000\\\"\", \"__page__\": null, \"strict_NA\": \"\\\"false\\\"\", \"__rerun_remap_job_id__\": null, \"genes\": \"{\\\"conserved_genes_finding\\\": \\\"false\\\", \\\"gene_finding\\\": {\\\"__current_case__\\\": 0, \\\"tool\\\": \\\"none\\\"}, \\\"rna_finding\\\": \\\"false\\\"}\", \"unaligned_part_size\": \"\\\"500\\\"\", \"al\": \"{\\\"ambiguity_score\\\": \\\"0.99\\\", \\\"ambiguity_usage\\\": \\\"one\\\", \\\"fragmented\\\": \\\"false\\\", \\\"fragmented_max_indent\\\": \\\"50\\\", \\\"min_alignment\\\": \\\"65\\\", \\\"min_identity\\\": \\\"95.0\\\", \\\"upper_bound_assembly\\\": \\\"false\\\", \\\"upper_bound_min_con\\\": \\\"2\\\", \\\"use_all_alignments\\\": \\\"false\\\"}\", \"extensive_mis_size\": \"\\\"1000\\\"\", \"large\": \"\\\"false\\\"\", \"in\": \"{\\\"__current_case__\\\": 1, \\\"custom\\\": \\\"false\\\", \\\"inputs\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}}\", \"k_mer\": \"{\\\"__current_case__\\\": 1, \\\"k_mer_stats\\\": \\\"\\\"}\", \"split_scaffolds\": \"\\\"false\\\"\", \"min_contig\": \"\\\"500\\\"\"}",
+            "tool_state": "{\"scaffold_gap_max_size\": \"\\\"1000\\\"\", \"skip_unaligned_mis_contigs\": \"\\\"true\\\"\", \"assembly\": \"{\\\"__current_case__\\\": 0, \\\"orga_type\\\": \\\"\\\", \\\"ref\\\": {\\\"__current_case__\\\": 0, \\\"features\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"operons\\\": {\\\"__class__\\\": \\\"RuntimeValue\\\"}, \\\"r\\\": {\\\"__class__\\\": \\\"ConnectedValue\\\"}, \\\"use_ref\\\": \\\"true\\\"}, \\\"type\\\": \\\"genome\\\"}\", \"circos\": \"\\\"false\\\"\", \"contig_thresholds\": \"\\\"0,1000\\\"\", \"__page__\": null, \"strict_NA\": \"\\\"false\\\"\", \"__rerun_remap_job_id__\": null, \"genes\": \"{\\\"conserved_genes_finding\\\": \\\"false\\\", \\\"gene_finding\\\": {\\\"__current_case__\\\": 0, \\\"tool\\\": \\\"none\\\"}, \\\"rna_finding\\\": \\\"false\\\"}\", \"unaligned_part_size\": \"\\\"500\\\"\", \"al\": \"{\\\"ambiguity_score\\\": \\\"0.99\\\", \\\"ambiguity_usage\\\": \\\"one\\\", \\\"fragmented\\\": \\\"false\\\", \\\"fragmented_max_indent\\\": \\\"50\\\", \\\"min_alignment\\\": \\\"65\\\", \\\"min_identity\\\": \\\"95.0\\\", \\\"upper_bound_assembly\\\": \\\"false\\\", \\\"upper_bound_min_con\\\": \\\"2\\\", \\\"use_all_alignments\\\": \\\"false\\\"}\", \"extensive_mis_size\": \"\\\"1000\\\"\", \"large\": \"\\\"false\\\"\", \"in\": \"{\\\"__current_case__\\\": 1, \\\"custom\\\": \\\"false\\\", \\\"inputs\\\": {\\\"__class__\\\": \\\"ConnectedValue\\\"}}\", \"k_mer\": \"{\\\"__current_case__\\\": 1, \\\"k_mer_stats\\\": \\\"\\\"}\", \"split_scaffolds\": \"\\\"false\\\"\", \"min_contig\": \"\\\"500\\\"\"}",
             "id": 8,
             "tool_shed_repository": {
                 "owner": "iuc",
@@ -514,18 +530,13 @@
             "errors": null,
             "name": "Quast",
             "post_job_actions": {
-                "HideDatasetActionreport_html": {
-                    "output_name": "report_html",
+                "HideDatasetActionlog": {
+                    "output_name": "log",
                     "action_type": "HideDatasetAction",
                     "action_arguments": {}
                 },
                 "HideDatasetActionkmers": {
                     "output_name": "kmers",
-                    "action_type": "HideDatasetAction",
-                    "action_arguments": {}
-                },
-                "HideDatasetActionreport_pdf": {
-                    "output_name": "report_pdf",
                     "action_type": "HideDatasetAction",
                     "action_arguments": {}
                 },
@@ -546,22 +557,22 @@
                     "action_type": "HideDatasetAction",
                     "action_arguments": {}
                 },
-                "HideDatasetActionlog": {
-                    "output_name": "log",
+                "HideDatasetActionreport_pdf": {
+                    "output_name": "report_pdf",
+                    "action_type": "HideDatasetAction",
+                    "action_arguments": {}
+                },
+                "HideDatasetActionreport_html": {
+                    "output_name": "report_html",
                     "action_type": "HideDatasetAction",
                     "action_arguments": {}
                 }
             },
             "label": null,
-            "inputs": [
-                {
-                    "name": "in",
-                    "description": "runtime parameter for tool Quast"
-                }
-            ],
+            "inputs": [],
             "position": {
-                "top": 979.59375,
-                "left": 850.390625
+                "top": 979.5999755859375,
+                "left": 850.38330078125
             },
             "annotation": "",
             "content_id": "toolshed.g2.bx.psu.edu/repos/iuc/quast/quast/5.0.2+galaxy0",

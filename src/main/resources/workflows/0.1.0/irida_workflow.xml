@@ -10,6 +10,12 @@
     <requiresSingleSample>true</requiresSingleSample>
   </inputs>
   <parameters>
+    <parameter name="trim_galore-2-min_length" defaultValue="30">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/bgruening/trim_galore/trim_galore/0.6.3" parameterName="min_length" label="Discard reads that became shorter than length" type="integer"/>
+    </parameter>
+    <parameter name="trim_galore-2-quality" defaultValue="20">
+      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/bgruening/trim_galore/trim_galore/0.6.3" parameterName="quality" label="Trim low-quality ends from reads in addition to adapter removal" type="integer"/>
+    </parameter>
     <parameter name="ivar_trim-4-primer_scheme_bedfile" required="true">
       <dynamicSource>
         <galaxyToolDataTable name="primer_scheme_bedfiles" displayColumn="name" parameterColumn="value" />
@@ -57,6 +63,7 @@
     <output name="trimmed_alignment" fileName="trimmed.bam"/>
     <output name="consensus_fasta" fileName="consensus.fasta"/>
     <output name="variants" fileName="variants.tsv"/>
+    <output name="trimming_report" fileName="trimming_report.txt"/>
     <output name="quast_report" fileName="quast_report.tsv"/>
   </outputs>
   <toolRepositories>
