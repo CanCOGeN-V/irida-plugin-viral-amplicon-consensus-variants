@@ -80,15 +80,20 @@ The plugin should now show up in the **Analyses > Pipelines** section of IRIDA.
 
 **Note:** As this pipeline is under active development, the list of exposed parameters and the default values of these parameters are subject to change.
 
-| Tool             | Parameter  | Description                                                                                | Default Value |
-|------------------|------------|--------------------------------------------------------------------------------------------|---------------|
-| trim_galore      | quality    | Threshold for trimming low-quality ends from reads (phred scale)                           |  20           |
-| trim_galore      | min_length | Discard reads that became shorter than this length                                         |  30           |
-| ivar_consensus   | min_depth  | Minimum required depth to call a consensus base                                            |  10           |
-| ivar_consensus   | min_freq   | Minimum frequency that a base must match to be called as the consensus base at a position. |  0.0          |
-| ivar_consensus   | min_qual   | Minimum quality score threshold to count base                                              |  20           |
-| ivar_variants    | min_freq   | Minimum frequency threshold                                                                |  0.03         |
-| ivar_variants    | min_qual   | Minimum quality score threshold to count base                                              |  20           |
+| Tool             | Parameter    | Description                                                                                | Default Value |
+|------------------|--------------|--------------------------------------------------------------------------------------------|---------------|
+| trim_galore      | quality      | Threshold for trimming low-quality ends from reads (phred scale)                           |  20           |
+| trim_galore      | min_length   | Discard reads that became shorter than this length                                         |  30           |
+| ivar_trim        | min_length   | Minimum length of read to retain after trimming                                            |  30           |
+| ivar_trim        | min_qual     | Minimum quality threshold for sliding window to pass                                       |  20           |
+| ivar_trim        | window_width | Sliding window width (bp)                                                                  |  4            |
+| ivar_trim        | inc_primers  | Include reads with no primers                                                              |  true         |
+| ivar_consensus   | min_depth    | Minimum required depth to call a consensus base                                            |  10           |
+| ivar_consensus   | min_freq     | Minimum frequency that a base must match to be called as the consensus base at a position. |  0.75         |
+| ivar_consensus   | min_qual     | Minimum quality score threshold to count base                                              |  20           |
+| ivar_consensus   | gap          | Use N instead of - for regions with less than minimum coverage                             |  true         |
+| ivar_variants    | min_freq     | Minimum frequency threshold                                                                |  0.25         |
+| ivar_variants    | min_qual     | Minimum quality score threshold to count base                                              |  20           |
 
 
 ![pipeline-parameters.png][]

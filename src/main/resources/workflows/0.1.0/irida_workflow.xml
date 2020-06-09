@@ -25,7 +25,7 @@
     <parameter name="ivar_trim-4-min_len" defaultValue="30">
       <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/ivar_trim/ivar_trim/1.2.1+galaxy0" parameterName="min_len" label="Minimum length of read to retain after trimming" type="integer"/>
     </parameter>
-    <parameter name="ivar_trim-4-inc_primers" defaultValue="false">
+    <parameter name="ivar_trim-4-inc_primers" defaultValue="true">
       <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/ivar_trim/ivar_trim/1.2.1+galaxy0" parameterName="inc_primers" label="Include reads with no primers" type="boolean"/>
     </parameter>
     <parameter name="ivar_trim-4-window_width" defaultValue="4">
@@ -34,16 +34,10 @@
     <parameter name="ivar_trim-4-min_qual" defaultValue="20">
       <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/ivar_trim/ivar_trim/1.2.1+galaxy0" parameterName="min_qual" label="Minimum quality threshold for sliding window to pass" type="integer"/>
     </parameter>
-    <parameter name="ivar_trim-4-primer.source" defaultValue="cached">
-      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/ivar_trim/ivar_trim/1.2.1+galaxy0" parameterName="primer.source" label="Source of primer information" type="select"/>
-    </parameter>
-    <parameter name="ivar_consensus-5-min_freq" defaultValue="0.0">
+    <parameter name="ivar_consensus-5-min_freq" defaultValue="0.75">
       <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/ivar_consensus/ivar_consensus/1.2.1+galaxy0" parameterName="min_freq" label="Minimum frequency threshold" type="float"/>
     </parameter>
-    <parameter name="ivar_consensus-5-filter_depth" defaultValue="false">
-      <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/ivar_consensus/ivar_consensus/1.2.1+galaxy0" parameterName="filter_depth" label="Exclude regions with smaller depth than the minimum threshold" type="boolean"/>
-    </parameter>
-    <parameter name="ivar_consensus-5-gap" defaultValue="false">
+    <parameter name="ivar_consensus-5-gap" defaultValue="true">
       <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/ivar_consensus/ivar_consensus/1.2.1+galaxy0" parameterName="gap" label="Use N instead of - for regions with less than minimum coverage" type="boolean"/>
     </parameter>
     <parameter name="ivar_consensus-5-min_depth" defaultValue="10">
@@ -52,7 +46,7 @@
     <parameter name="ivar_consensus-5-min_qual" defaultValue="20">
       <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/ivar_consensus/ivar_consensus/1.2.1+galaxy0" parameterName="min_qual" label="Minimum quality score threshold to count base" type="integer"/>
     </parameter>
-    <parameter name="ivar_variants-6-min_freq" defaultValue="0.03">
+    <parameter name="ivar_variants-6-min_freq" defaultValue="0.25">
       <toolParameter toolId="toolshed.g2.bx.psu.edu/repos/iuc/ivar_variants/ivar_variants/1.2.1+galaxy0" parameterName="min_freq" label="Minimum frequency threshold" type="float"/>
     </parameter>
     <parameter name="ivar_variants-6-min_qual" defaultValue="20">
