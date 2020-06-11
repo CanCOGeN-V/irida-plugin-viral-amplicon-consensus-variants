@@ -100,25 +100,20 @@ The plugin should now show up in the **Analyses > Pipelines** section of IRIDA.
 
 ## Analysis Results
 
-You should be able to run a pipeline with this plugin and get analysis results. The results include a full `abricate` 
-report, and a screened `abricate` report that includes only your genes of interest.
+Analysis results include a consensus sequence in `.fasta` format, a table of variants in `.tsv` format.
 
 ![plugin-results-1.png][]
 ![plugin-results-2.png][]
+
+In addition, quality-control results describing input read trimming and consensus sequence characteristics are created.
+
 ![plugin-results-3.png][]
+![plugin-results-4.png][]
+
 
 ## Metadata Table
 
-And, you should be able to save and view these results in the IRIDA metadata table. The following fields are written to
-the IRIDA 'Line List':
-
-| Field Name                                 | Description                                                                                                |
-|--------------------------------------------|------------------------------------------------------------------------------------------------------------|
-| viral-amplicons-cv/                        |                                                                                                            |
-| viral-amplicons-cv/                        |                                                                                                            |
-
-
-![plugin-metadata.png][]
+This pipeline plugin does not currently write any metadata to the IRIDA 'Line List'.
 
 # Building
 
@@ -187,6 +182,7 @@ The following dependencies are required in order to make use of this plugin.
 [plugin-results-1.png]: doc/images/plugin-results-1.png
 [plugin-results-2.png]: doc/images/plugin-results-2.png
 [plugin-results-3.png]: doc/images/plugin-results-3.png
+[plugin-results-4.png]: doc/images/plugin-results-4.png
 [plugin-pipeline.png]: doc/images/plugin-pipeline.png
 [plugin-metadata.png]: doc/images/plugin-metadata.png
 [pipeline-parameters.png]: doc/images/pipeline-parameters.png
